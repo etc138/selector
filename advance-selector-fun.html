@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advance Selector Fun</title>
+    <style>
+        .special.frozen {
+            background: paleturquoise;
+        }
+
+        p.frozen {
+            border: 3px solid lightskyblue;
+        }
+
+/* immediately class, this choose only the one right after the class CAT */
+        .cat + .dog {
+            background: orange;
+        }
+
+        /* this gives border to all children */
+        ul li {
+            border: 3px solid salmon;
+        }
+
+        /* this selec only the immediate child, called DIRECT CHILD SELECTOR */
+        ul > li {
+            border: 3px solid lime;
+        }
+
+/* FOLLOWING SELECTOR, use this ~ */
+        .cat2 ~ .dog2 {
+            background: magenta;
+        }
+
+        div[class="dog"] {
+            background: red;
+        }
+
+
+        .exactExample a[href="http://google.com"] {
+            background: green;
+            color: white;
+            padding: 10px;
+            display: inline-block;
+        }
+
+
+        /* * is the wild card */
+        /* ^ is for begins with */
+        /* $ is for begins with */
+        .exactExample a[href*="google"] {
+            background: green;
+            color: white;
+            padding: 10px;
+            display: inline-block;
+        }
+
+
+/* pick specific child */
+        section p:first-child {
+            background: pink;
+        }
+
+        section p:nth-child(3) {
+            background: rosybrown;
+        }
+
+        /* every 2nd element */
+        section p:nth-child(2n) {
+            background: fuchsia;
+        }
+
+        .special-div {
+            border: 5px dashed pink;
+            padding:10px;
+            text-transform: uppercase;
+        }
+
+        .trigger:checked + .special-div {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <input type="checkbox" class="trigger">
+    <div class="special-div">Hide me! or Show me!</div>
+    <section>
+        <p>1st child</p>
+        <p>2nd child</p>
+        <p>a child</p>
+        <p>a child</p>
+        <p>a child</p>
+        <p>a child</p>
+        <p>a child</p>
+    </section>
+    <div class="exactExample">
+        <a href="http://google.com">Google</a>
+        <a href="http://www.google.com">Google (with www)</a>
+        <a href="http://mozilla.com">Mozilla</a>
+    </div>
+    <h1 class="special frozen">Ice cream shop</h1>
+
+    <h2 class="special">Get your ice cream here</h2>
+
+    <p class="frozen">Ice cream is kept in the freezer</p>
+    <p class="special frozen">Delicious, and frozen</p>
+
+    <div class="cat">Cat</div>
+    <div class="dog">Dog</div>
+    <div class="dog">Dog</div>
+
+    <ul>
+        <li>Hello no. 1</li>
+        <li>
+            <ol>
+                <li>nested list 1</li>
+                <li>nested list 2</li>
+            </ol>
+        </li>
+    </ul>
+
+    <div class="cat2">Cat</div>
+    <div class="dog2">Dog</div>
+    <div class="dog2">Dog</div>
+
+
+</body>
+</html>
